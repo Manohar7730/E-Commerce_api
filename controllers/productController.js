@@ -1,3 +1,4 @@
+const { mongo, default: mongoose } = require('mongoose');
 const Product = require('../models/product');
 
 module.exports.products = async (req, res) => {
@@ -66,3 +67,47 @@ module.exports.delete = async (req, res) => {
         });
     }
 }
+
+module.exports.update = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const quantity = req.query.number;
+
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(400).json({
+                message: "Invalid product ID"
+            });
+        }
+
+        if (!quantity || isNaN(quantity)) {
+            return res.status(400).json({
+                message: "Invalid quantity value"
+            });
+        }
+
+        const product = await Product.findById(id);
+
+        if (!product) {
+            return res.status(404).json({
+                message: "Product not found"
+            });
+        }
+
+        product.quantity = quantity;
+        const updatedProduct = await product.save();
+
+        return res.status(200).json({
+            data: {
+                product: updatedProduct
+            },
+            message: "Updated successfully"
+        });
+    } catch (err) {
+        return res.status(500).json({
+            data: {
+                err: err
+            },
+            message: "Error in updating the quantity"
+        });
+    }
+};

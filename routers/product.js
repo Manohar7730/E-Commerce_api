@@ -11,6 +11,7 @@ const productController = require('../controllers/productController');
 router.get('/products', productController.products);
 router.post('/products/create', productController.create);
 router.delete('/:id',productController.delete);
+router.post('/products/:id/update_quantity',productController.update);
 
 // Export the router
 module.exports = router;
