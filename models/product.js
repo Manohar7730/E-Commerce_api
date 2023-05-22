@@ -5,13 +5,11 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
-        trim: true
+        required: true
     },
     quantity: {
-        type: Number,
-        required: true,
-        trim: true
+        type: String,
+        required: true
     }
 });
 

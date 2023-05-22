@@ -7,6 +7,9 @@ const port = 8000;
 // Create an instance of the Express application
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 // Import the Mongoose module for database connection
 const db = require('./config/mongoose');
 
