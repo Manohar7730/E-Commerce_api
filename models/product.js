@@ -1,18 +1,22 @@
+// Import the Mongoose module
 const mongoose = require('mongoose');
 
+// Define the product schema
 const productSchema = new mongoose.Schema({
-    name:{
-        type : String,
-        required : true,
-        trim : true
+    name: {
+        type: String,
+        required: true,
+        trim: true
     },
-    quantity:{
-        type : Number,
-        required : true,
-        trim : true
+    quantity: {
+        type: Number,
+        required: true,
+        trim: true
     }
-})
+});
 
-const Product = mongoose.model('product',productSchema);
+// Create the Product model using the product schema
+const Product = mongoose.model('product', productSchema);
 
+// Export the Product model
 module.exports = Product;
