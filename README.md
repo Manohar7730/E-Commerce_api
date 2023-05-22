@@ -2,3 +2,4 @@
 
 1) Started the project with npm init & installed express and nodemon
 2) Server has been set up using express and was running succesfully and checked on postman
+3) Installed mongoose , configured mongoose and  created mongooseSchema and connected to mongodb
