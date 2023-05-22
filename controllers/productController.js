@@ -1,6 +1,6 @@
-const { mongo, default: mongoose } = require('mongoose');
 const Product = require('../models/product');
 
+// to get all the products
 module.exports.products = async (req, res) => {
     try {
         const products = await Product.find()
@@ -22,6 +22,7 @@ module.exports.products = async (req, res) => {
     }
 };
 
+// for creating the product
 module.exports.create = async (req, res) => {
     try {
         if (!req.body.name || !req.body.quantity) {
@@ -46,6 +47,7 @@ module.exports.create = async (req, res) => {
     }
 };
 
+// for deleting the product
 module.exports.delete = async (req, res) => {
     try {
         const productId = await req.params.id;
@@ -68,6 +70,7 @@ module.exports.delete = async (req, res) => {
     }
 }
 
+// for updating quantity of product
 module.exports.update = async (req, res) => {
     try {
         const id = req.params.id;

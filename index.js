@@ -7,6 +7,7 @@ const port = 8000;
 // Create an instance of the Express application
 const app = express();
 
+// middleware's for parsing data in database
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
