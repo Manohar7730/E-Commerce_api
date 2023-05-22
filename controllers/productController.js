@@ -13,7 +13,7 @@ module.exports.products = async (req, res) => {
             data: {
                 products: products
             },
-            message: "Connected Router and controller to app"
+            message: "All products"
         });
     } catch (err) {
         return res.status(500).json({
