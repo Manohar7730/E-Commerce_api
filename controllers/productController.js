@@ -58,7 +58,7 @@ module.exports.delete = async (req, res) => {
             });
         }
         return res.status(200).json({
-            message : "deleted successfully"
+            message: "deleted successfully"
         })
     } catch (err) {
         return res.status(500).json({
