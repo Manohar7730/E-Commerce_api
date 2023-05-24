@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Connect to the MongoDB database
-mongoose.connect(process.env.URL);
+mongoose.connect('mongodb+srv://manohar:Bz8JvjEvmCUOptiQ@cluster0.mnskufs.mongodb.net/e-commerce?retryWrites=true&w=majority');
 
 // Get the default connection
 const db = mongoose.connection;
