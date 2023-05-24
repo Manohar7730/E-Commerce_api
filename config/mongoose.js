@@ -15,5 +15,8 @@ db.once('open', () => {
     console.log('MongoDB is connected');
 });
 
+// Enable debug logging in Mongoose
+mongoose.set('debug', true);
+
 // Export the database connection
 module.exports = db;
