@@ -9,4 +9,3 @@
 7) added json and urlencoded middlewares for parsing data
 8) added controllers for creating and deleting a product
 9) fetching product from product id and updating quantity number of product via query parameter
-10) 
