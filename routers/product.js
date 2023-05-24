@@ -8,10 +8,10 @@ const router = express.Router();
 const productController = require('../controllers/productController');
 
 // Define a route for handling GET and post requests
-router.get('/products', productController.products);
-router.post('/products/create', productController.create);
+router.get('/', productController.products);
+router.post('/create', productController.create);
 router.delete('/:id',productController.delete);
-router.post('/products/:id/update_quantity',productController.update);
+router.post('/:id/update_quantity',productController.update);
 
 // Export the router
 module.exports = router;

@@ -18,7 +18,7 @@ const db = require('./config/mongoose');
 const productRouter = require('./routers/product');
 
 // Use the product router for all routes starting with '/'
-app.use('/', productRouter);
+app.use('/products', productRouter);
 
 // Start the server and listen on the specified port
 app.listen(port, (err) => {
