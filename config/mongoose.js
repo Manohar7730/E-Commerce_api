@@ -1,7 +1,8 @@
 // Import the Mongoose module
 const mongoose = require('mongoose');
 // Connect to the MongoDB database
-mongoose.connect(process.env.MONGODB_ATLAS_URI);
+mongoose.connect(process.env.MONGODB_ATLAS_URI,{useNewUrlParser: true,
+    useUnifiedTopology: true});
 // Get the default connection
 const db = mongoose.connection;
 // Handle connection error
