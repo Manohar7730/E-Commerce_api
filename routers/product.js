@@ -9,9 +9,10 @@ const productController = require("../controllers/productController");
 
 // Define a route for handling GET and post requests
 router.get("/", productController.products);
+router.get("/:id", productController.product);
 router.post("/create", productController.create);
 router.delete("/delete/:id", productController.delete);
-router.post("/:id/update_quantity", productController.update);
+router.patch("/:id/update_quantity", productController.update);
 
 // Export the router
 module.exports = router;
