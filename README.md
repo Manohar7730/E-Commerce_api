@@ -1,7 +1,7 @@
 
 # [E-Commerce API Project](https://e-commerce-oy6q.onrender.com/) <-- to view all products in JSON format
 
-A simple CRUD API for products built with Node.js, Express and MongoDB.
+A lightweight and scalable RESTful API for managing e-commerce products, built with Node.js, Express, and MongoDB. Deployed live on Render for real-time testing.
 
 ## Table of Contents
 
@@ -27,10 +27,10 @@ A simple CRUD API for products built with Node.js, Express and MongoDB.
 ## Technologies Used
 <a name="technologies-used"></a>
 
-- Node.js
-- Express.js
-- MongoDB (Mongoose)
-- POSTMAN
+- Node.js (v18.x)
+- Express.js (v4.x)
+- MongoDB (Mongoose v7.x)
+- Postman (for testing)
 
 ## Installation
 <a name="installation"></a>
@@ -67,20 +67,20 @@ Replace your_mongodb_uri with your MongoDB Atlas connection string.
 <a name="project-structure"></a>
 
 ```bash
-e-commerce_api/
-|-- config/
-|   |-- mongoose.js
-|-- controllers/
+|-- config/                # Database configuration
+|   |-- mongoose.js       # MongoDB connection setup
+|-- controllers/          # Business logic for API endpoints
 |   |-- productController.js
-|-- models/
-|   |-- product.js
-|-- routers/
-|   |-- product.js
-|-- .env
-|-- .gitignore
-|-- index.js
-|-- package.json
-|-- README.md
+|-- models/              # Database schemas
+|   |-- product.js      # Product schema
+|-- routers/             # API routes
+|   |-- product.js      # Product routes
+|-- .env                # Environment variables
+|-- .gitignore          # Files to ignore in Git
+|-- index.js            # Main server file
+|-- package.json        # Project dependencies and scripts
+|-- README.md           # Project documentation
+
 ```
 ## Usage
 <a name="usage"></a>
@@ -89,7 +89,7 @@ e-commerce_api/
 
 - Endpoint: GET /
 - Description: Get a list of all products.
-- Response:
+- Response (Status: 200 OK):
 ```bash
     {
         "data": {
@@ -116,7 +116,12 @@ e-commerce_api/
 
 - Endpoint: POST /create
 - Description: Create a new product.
-- Request:
+- Request (Status: 201 Created): {
+                                     "data": {
+                                         "product": {...}
+                                     },
+                                     "message": "Product Created successfully"
+                                 }
 ```bash
     {
         "name": "Product Name",
@@ -164,17 +169,21 @@ e-commerce_api/
 
 #### Endpoints
 
-- POST /create - Create new product
-- GET / - Get all products
-- GET /:id - Get single product
-- PATCH /:id/update_quantity - Update product
-- DELETE /delete/:id - Delete product
+| Method | Endpoint                  | Description                     |
+|--------|---------------------------|---------------------------------|
+| GET    | `/`                       | Fetch all products             |
+| GET    | `/:id`                    | Fetch product by ID            |
+| POST   | `/create`                 | Create a new product           |
+| DELETE | `/delete/:id`             | Delete a product by ID         |
+| PATCH  | `/:id/update_quantity`    | Update product quantity        |
 
 ## Contributing
 <a name="contributing"></a>
 
 Contributions are always welcome!Feel free to open issues or pull requests.
 
+## License
+This project is licensed under the ISC License.
 
 ## Authors
 <a name="author"></a>
