@@ -177,6 +177,18 @@ Replace your_mongodb_uri with your MongoDB Atlas connection string.
 | DELETE | `/delete/:id`             | Delete a product by ID         |
 | PATCH  | `/:id/update_quantity`    | Update product quantity        |
 
+# E-commerce
+## Overview
+A CRUD app to manage products and cart functionality using MERN stack.
+## Tech Stack
+- Node.js, Express, MongoDB, React
+## Features
+- Product listing, cart management, full-stack integration
+## Setup
+1. Clone: `git clone https://github.com/Manohar7730/E-Commerce_api`
+2. Install: `npm install`
+3. Run: `npm start`
+
 ## Contributing
 <a name="contributing"></a>
 
