@@ -11,11 +11,16 @@ const port = process.env.PORT || 8000;
 const app = express();
 
 // Enable CORS to handle requests from different origins
+
+// Configure CORS
 app.use(
   cors({
-    origin: "http://localhost:3000", // Replace with your frontend URL in production
-    methods: ["GET", "POST", "PATCH", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: [
+      "http://localhost:3000", // Allow local frontend
+      "https://e-commerce-oy6q.onrender.com", // Allow deployed frontend
+    ],
+    methods: ["GET", "POST", "PATCH", "DELETE"], // Allow specific HTTP methods
+    credentials: true, // Optional: Allow cookies/headers if needed
   })
 );
 
@@ -59,4 +64,3 @@ app.use((err, req, res, next) => {
   console.error("Error occurred:", err.message);
   res.status(500).json({ error: "An internal server error occurred" });
 });
-
