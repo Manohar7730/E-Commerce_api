@@ -1,11 +1,13 @@
 // Import the Express module
 const express = require("express");
 
+const cors = require("cors");
 // Set the port number
 const port = process.env.PORT || 8000;
 
 // Create an instance of the Express application
 const app = express();
+app.use(cors());
 
 const env = require("dotenv").config();
 
